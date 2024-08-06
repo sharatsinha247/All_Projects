@@ -1,55 +1,37 @@
-# Loan_Tap_Logistic_Regression
-Classification problem if the loan should be given or not
+# Ola Random Forest
+Problem Statement
 
-LoanTap is an online platform committed to delivering customized loan products to millennials. They innovate in an otherwise dull loan segment, to deliver instant, flexible loans on consumer friendly terms to salaried professionals and businessmen.
+Recruiting and retaining drivers is seen by industry watchers as a tough battle for Ola. Churn among drivers is high and it’s very easy for drivers to stop working for the service on the fly or jump to Uber depending on the rates.
 
-The data science team at LoanTap is building an underwriting layer to determine the creditworthiness of MSMEs as well as individuals.
+As the companies get bigger, the high churn could become a bigger problem. To find new drivers, Ola is casting a wide net, including people who don’t have cars for jobs. But this acquisition is really costly. Losing drivers frequently impacts the morale of the organization and acquiring new drivers is more expensive than retaining existing ones.
 
-LoanTap deploys formal credit to salaried individuals and businesses 4 main financial instruments:
+You are working as a data scientist with the Analytics Department of Ola, focused on driver team attrition. You are provided with the monthly information for a segment of drivers for 2019 and 2020 and tasked to predict whether a driver will be leaving the company or not based on their attributes like
 
-- Personal Loan
-- EMI Free Loan
-- Personal Overdraft
-- Advance Salary Loan
-This case study will focus on the underwriting process behind Personal Loan only
+Demographics (city, age, gender etc.)
+Tenure information (joining date, Last Date)
+Historical data regarding the performance of the driver (Quarterly rating, Monthly business acquired, grade, Income)
+Dataset:
 
-Problem Statement:
+Dataset Link: ola_driver.csv
 
-Given a set of attributes for an Individual, determine if a credit line should be extended to them. If so, what should the repayment terms be in business recommendations?
+Column Profiling:
 
+MMMM-YY : Reporting Date (Monthly)
+Driver_ID : Unique id for drivers
+Age : Age of the driver
+Gender : Gender of the driver – Male : 0, Female: 1
+City : City Code of the driver
+Education_Level : Education level – 0 for 10+ ,1 for 12+ ,2 for graduate
+Income : Monthly average Income of the driver
+Date Of Joining : Joining date for the driver
+LastWorkingDate : Last date of working for the driver
+Joining Designation : Designation of the driver at the time of joining
+Grade : Grade of the driver at the time of reporting
+Total Business Value : The total business value acquired by the driver in a month (negative business indicates cancellation/refund or car EMI adjustments)
+Quarterly Rating : Quarterly rating of the driver: 1,2,3,4,5 (higher is better)
+Concepts Tested:
 
-Data dictionary:
-
-- loan_amnt : The listed amount of the loan applied for by the borrower. If at some point in time, the credit department reduces the loan amount, then it will be reflected in this value.
-- term : The number of payments on the loan. Values are in months and can be either 36 or 60.
-- int_rate : Interest Rate on the loan
-- installment : The monthly payment owed by the borrower if the loan originates.
-- grade : LoanTap assigned loan grade
-- sub_grade : LoanTap assigned loan subgrade
-- emp_title :The job title supplied by the Borrower when applying for the loan.*
-- emp_length : Employment length in years. Possible values are between 0 and 10 where 0 means less than one year and 10 means ten or more years.
-- home_ownership : The home ownership status provided by the borrower during registration or obtained from the credit report.
-- annual_inc : The self-reported annual income provided by the borrower during registration.
-- verification_status : Indicates if income was verified by LoanTap, not verified, or if the income source was verified
-- issue_d : The month which the loan was funded
-- loan_status : Current status of the loan - Target Variable
-- purpose : A category provided by the borrower for the loan request.
-- title : The loan title provided by the borrower
-- dti : A ratio calculated using the borrower’s total monthly debt payments on the total debt obligations, excluding mortgage and the requested LoanTap loan, divided by the borrower’s self-reported monthly income.
-- earliest_cr_line :The month the borrower's earliest reported credit line was opened
-- open_acc : The number of open credit lines in the borrower's credit file.
-- pub_rec : Number of derogatory public records
-- revol_bal : Total credit revolving balance
-- revol_util : Revolving line utilization rate, or the amount of credit the borrower is using relative to all available revolving credit.
-- total_acc : The total number of credit lines currently in the borrower's credit file
-- initial_list_status : The initial listing status of the loan. Possible values are – W, F
-- application_type : Indicates whether the loan is an individual application or a joint application with two co-borrowers
-- mort_acc : Number of mortgage accounts.
-- pub_rec_bankruptcies : Number of public record bankruptcies
-- Address: Address of the individual
-Concept Used:
-
-- Exploratory Data Analysis
-- Feature Engineering
-- Logistic Regression
-- Precision Vs Recall Tradeoff
+Ensemble Learning- Bagging
+Ensemble Learning- Boosting
+KNN Imputation of Missing Values
+Working with an imbalanced dataset
